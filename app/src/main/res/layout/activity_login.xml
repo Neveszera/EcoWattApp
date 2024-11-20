@@ -1,0 +1,84 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="129dp"
+        android:layout_height="57dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="usuário"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_user"
+            android:layout_width="224dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="senha"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="224dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="224dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#39A282"
+            android:text="Entrar"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criar conta"
+        android:textColor="#39A282"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>

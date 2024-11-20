@@ -1,0 +1,5 @@
+<resources>
+    <style name="BottomNavTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">8sp</item>
+    </style>
+</resources>

@@ -1,0 +1,627 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- Linha 1: Produção e Energia Armazenada -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <!-- Card Produção -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Produção"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+
+            <!-- Conteúdo Card Produção -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_item"
+                android:padding="16dp">
+
+                <!-- Solar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card_green"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Solar"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21 Kw/h"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <!-- Eólica -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card_green"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Eólica"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3,5 Kw/h"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <!-- Outras -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Outras"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- / --"
+                        android:textSize="14sp"
+                        android:textColor="#A9A9A9" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card Energia Armazenada -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Energia Armazenada"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+
+            <!-- Conteúdo Card Energia Armazenada -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_item"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <!-- Número e Porcentagem -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="87"
+                        android:textSize="58sp"
+                        android:textStyle="bold"
+                        android:textColor="#39A282" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="4dp"
+                        android:textColor="#39A282" />
+                </LinearLayout>
+
+                <!-- Texto Carregando -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="carregando ..."
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center" />
+
+                <FrameLayout
+                    android:layout_width="115dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/background_barra"
+                    android:clipChildren="true"
+                    android:clipToPadding="true"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- Parte preenchida -->
+                    <View
+                        android:id="@+id/progress_fill"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_progress" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Linha 2: Uso e Análise -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <!-- Card Uso -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Uso em tempo real"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                android:textColor="#000" />
+
+            <!-- Conteúdo Card Uso -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_item"
+                android:padding="16dp">
+
+                <!-- Solar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card_green"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Solar"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 Kw/h"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <!-- Eólica -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Eólica"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- / --"
+                        android:textSize="14sp"
+                        android:textColor="#A9A9A9" />
+                </LinearLayout>
+
+                <!-- Outras -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Outras"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- / --"
+                        android:textSize="14sp"
+                        android:textColor="#A9A9A9" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card Análise -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Análise de dados"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+
+            <!-- Conteúdo Card Análise -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/background_item"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/gifImageView"
+                    android:layout_width="136dp"
+                    android:layout_height="136dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="GIF" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Linha 3: Status e Custo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2">
+
+        <!-- Card Status -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Status dos sensores"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+
+            <!-- Conteúdo do Card Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/background_item">
+
+                <!-- Linha Horizontal: Conectado e Não conectado -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <!-- Coluna 1: Conectado -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Texto Conectado -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Conectado"
+                            android:textSize="10sp"
+                            android:textColor="#000"
+                            android:gravity="center" />
+
+                        <!-- Card com 18 / 20 -->
+                        <LinearLayout
+                            android:layout_width="73dp"
+                            android:layout_height="70dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/rounded_card_green"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18 / 20"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Coluna 2: Não conectado -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Texto Não conectado -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não conectado"
+                            android:textSize="10sp"
+                            android:textColor="#000"
+                            android:gravity="center" />
+
+                        <!-- Card com 02 / 20 -->
+                        <LinearLayout
+                            android:layout_width="73dp"
+                            android:layout_height="70dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/rounded_card_red"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="02 / 20"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#FF0000"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card Custo Estimado -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Título Fora do Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Custo estimado"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/background_item">
+
+                <!-- Linha Horizontal: Produção e Consumo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <!-- Coluna 1: Produção -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Produção"
+                            android:textSize="14sp"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="31 Kw"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R$"
+                                android:textSize="8sp"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="008"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#39A282"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=",13"
+                                android:textSize="8sp"
+                                android:textColor="#39A282"
+                                android:layout_marginStart="2dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Coluna 2: Consumo -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Consumo"
+                            android:textSize="14sp"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="35,2 Kw"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R$"
+                                android:textSize="8sp"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="023"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#FF0000"
+                                android:layout_marginStart="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=",09"
+                                android:textSize="8sp"
+                                android:textColor="#FF0000"
+                                android:layout_marginStart="2dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>

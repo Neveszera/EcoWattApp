@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_analyses"
+        android:icon="@drawable/ic_analyses"
+        android:title="Análises" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Configurações" />
+
+    <item
+        android:id="@+id/nav_middle"
+        android:icon="@drawable/ic_middle_icon"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_sensors"
+        android:icon="@drawable/ic_sensors"
+        android:title="Sensores" />
+
+    <item
+        android:id="@+id/nav_energy"
+        android:icon="@drawable/ic_energy"
+        android:title="Energia" />
+</menu>

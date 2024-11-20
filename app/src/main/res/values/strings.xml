@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Eco Watt</string>
+
+    <string-array name="sensor_types">
+        <item>Escolha um item da lista</item>
+        <item>Geração de energia</item>
+        <item>Fonte de uso</item>
+        <item>Comunicação</item>
+        <item>Linha de distribuição</item>
+        <item>Fonte de energia (tomada ou lâmpada)</item>
+    </string-array>
 </resources>

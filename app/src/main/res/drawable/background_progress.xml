@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#39A282" /> <!-- Cor do progresso -->
+    <corners android:radius="10dp" /> <!-- Borda arredondada -->
+</shape>

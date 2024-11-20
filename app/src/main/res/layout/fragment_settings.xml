@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configurações"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            android:layout_marginBottom="31dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escolha qual item você deseja configurar. Caso você precise desligar o sistema ou ele seja desligado acidentalmente, ele só poderá ser ligado após 30 minutos de espera."
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_marginBottom="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_sensor"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:backgroundTint="#C6C6C6"
+                android:text="Sensores e tomadas"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_production"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#C6C6C6"
+                android:text="Produção"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_distribution"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#C6C6C6"
+                android:text="Distribuição"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_storage"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#C6C6C6"
+                android:text="Armazenamento"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_vacation"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#39A282"
+                android:text="Modo férias"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_off"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#E35286"
+                android:text="Desligar o sistema"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensores EcoWatt"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            android:layout_marginBottom="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nome do sensor"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="3dp" />
+
+        <EditText
+            android:id="@+id/et_sensor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_input_sensor"
+            android:padding="12dp"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tipo de sensor"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="3dp" />
+
+        <Spinner
+            android:id="@+id/et_sensor_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_input_sensor"
+            android:padding="12dp"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="local de instalação (opcional)"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="3dp" />
+
+        <EditText
+            android:id="@+id/et_sensor_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_input_sensor"
+            android:padding="12dp"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="produto conectado"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="3dp" />
+
+        <EditText
+            android:id="@+id/et_sensor_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_input_sensor"
+            android:padding="12dp"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="descrição do sensor (opcional)"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="3dp" />
+
+        <EditText
+            android:id="@+id/et_sensor_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_input_sensor"
+            android:padding="12dp"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"
+            android:textStyle="italic"
+            android:textColorHint="#C6C6C6"
+            android:textSize="12sp"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C6C6C6"
+                android:layout_height="wrap_content"
+                android:text="CANCELAR"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#39A282"
+                android:layout_height="wrap_content"
+                android:text="SALVAR"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

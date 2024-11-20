@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensores EcoWatt"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            android:layout_marginBottom="31dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Você está prestes a deletar um sensor configurado em seu sistema, isso poderá acarretar na falha na análise de dados."
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="Essa operação é irrecuperável, caso seja necessário adicionar um sensor nesta posição, você terá que adicionar e parear um novo sensor."
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:backgroundTint="#C6C6C6"
+                android:text="CANCELAR"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#E35286"
+                android:text="REMOVER SENSOR"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

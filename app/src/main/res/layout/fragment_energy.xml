@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Contêiner principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status das baterias do ecossistema"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+        </LinearLayout>
+
+        <!-- Bloco de Bateria -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Linha de título e consumo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Conjunto de baterias 1"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kW"
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Barra de Progresso -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_barra"
+                android:layout_marginBottom="8dp">
+
+                <!-- Parte Preenchida -->
+                <View
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_progress" />
+
+                <!-- Texto dentro da Barra -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:orientation="vertical">
+
+                    <!-- Texto de porcentagem na mesma linha -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="83dp"
+                            android:text="83"
+                            android:textColor="#FFFFFF"
+                            android:textSize="72sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
+                    <!-- Tempo restante -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2h37min restantes"
+                        android:textSize="8sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Botão fora da Barra (com margem negativa) -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="parar carregamento"
+                android:backgroundTint="#E35286"
+                android:textColor="#FFFFFF"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="14dp"/>
+        </LinearLayout>
+
+
+        <!-- Bloco de Bateria -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Linha de título e consumo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Conjunto de baterias 2"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kW"
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Barra de Progresso -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_barra"
+                android:layout_marginBottom="8dp">
+
+                <!-- Parte Preenchida -->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_progress" />
+
+                <!-- Texto dentro da Barra -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:orientation="vertical">
+
+                    <!-- Texto de porcentagem na mesma linha -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="83dp"
+                            android:text="52"
+                            android:textColor="#FFFFFF"
+                            android:textSize="72sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
+                    <!-- Tempo restante -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12h43min restantes"
+                        android:textSize="8sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Botão fora da Barra (com margem negativa) -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="parar carregamento"
+                android:backgroundTint="#E35286"
+                android:textColor="#FFFFFF"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="14dp"/>
+        </LinearLayout>
+
+        <!-- Bloco de Bateria -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Linha de título e consumo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="BYD Song Plus"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: "
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconectado"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Barra de Progresso com Botão sobreposto -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_barra"
+                android:layout_marginBottom="8dp">
+
+                <!-- Parte Preenchida -->
+                <View
+                    android:layout_width="260dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_progress" />
+
+                <!-- Texto dentro da Barra -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:orientation="vertical">
+
+                    <!-- Texto de porcentagem na mesma linha -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="83dp"
+                            android:text="90"
+                            android:textColor="#FFFFFF"
+                            android:textSize="72sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF" />
+
+                        <!-- Botão sobreposto -->
+                        <Button
+                            android:layout_width="121dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:textStyle="bold"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:text="carregamento remoto"
+                            android:textColor="#39A282" />
+                    </LinearLayout>
+
+                    <!-- Tempo restante -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*última leitura"
+                        android:textSize="8sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Não é possível iniciar o carregamento remoto pois o veículo não está conectado ao carregador. Conecte o veículo para monitorar remotamente o carregamento."
+                android:textSize="10sp"
+                android:textColor="#E35286" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
