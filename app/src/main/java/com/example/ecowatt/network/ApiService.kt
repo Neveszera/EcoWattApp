@@ -4,6 +4,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -57,12 +58,25 @@ data class SensorResponsePage(
     val empty: Boolean
 )
 
+data class UpdatePasswordRequest(
+    val senhaAtual: String,
+    val senhaNova: String,
+    val senhaConfirmacao: String
+)
+
+
 interface ApiService {
     @POST("/auth/register")
     suspend fun registerUser(@Body request: RegisterRequest): Response<String>
 
     @POST("/auth/login")
     suspend fun loginUser(@Body request: LoginRequest): Response<LoginResponse>
+
+    @PATCH("/auth/{id}")
+    suspend fun updatePassword(@Path("id") userId: Int, @Body request: UpdatePasswordRequest): Response<Unit>
+
+    @DELETE("/auth/{id}")
+    suspend fun deleteUser(@Path("id") id: Int): Response<Unit>
 
     @POST("/sensores")
     suspend fun registerSensor(@Body request: SensorRequest): Response<SensorResponse>

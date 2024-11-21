@@ -48,19 +48,21 @@ class RegisterActivity : AppCompatActivity() {
 
                         runOnUiThread {
                             if (response.isSuccessful) {
+                                // Exibe a mensagem de sucesso
                                 Toast.makeText(this@RegisterActivity, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show()
                                 finish() // Fecha a tela após o registro
                             } else {
+                                // Exibe o erro se a resposta não for bem-sucedida
                                 val errorBody = response.errorBody()?.string() ?: "Erro desconhecido"
-                                Toast.makeText(this@RegisterActivity, "Erro ao criar conta: ${response.message()}", Toast.LENGTH_SHORT).show()
-                                Log.d("RegisterError", "Erro ao criar conta: $errorBody")
-                                Log.d("RegisterError", "Erro ao criar conta: ${response.errorBody()?.string()}")
-                                Log.d("RegisterRequest", "Login: $login, Password: $password, Full Name: $fullName")
+                                Log.e("RegisterError", "Erro ao criar conta: ${response.code()} - $errorBody")
+                                Toast.makeText(this@RegisterActivity, "Erro ao criar conta: $errorBody", Toast.LENGTH_SHORT).show()
                             }
                         }
                     } catch (e: Exception) {
+                        // Captura de exceções
                         runOnUiThread {
-                            Toast.makeText(this@RegisterActivity, "Erro de conexão: ${e.message}", Toast.LENGTH_SHORT).show()
+                            Log.e("RegisterError", "Erro de conexão: ${e.printStackTrace()}")
+                            Toast.makeText(this@RegisterActivity, "Erro de conexão, tente novamente.", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

@@ -51,7 +51,6 @@ class SystemOffFragment : Fragment(R.layout.fragment_system_off) {
                             apiService.updateSensor(sensor.id, updatedSensor)
                         }
 
-                        // Navegar para tela de sucesso
                         withContext(Dispatchers.Main) {
                             requireActivity().supportFragmentManager.beginTransaction()
                                 .replace(R.id.fragment_container, SystemOffSuccessFragment())
@@ -72,7 +71,7 @@ class SystemOffFragment : Fragment(R.layout.fragment_system_off) {
         }
 
         btnCancel.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack() // Voltar ao fragmento anterior
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
 }

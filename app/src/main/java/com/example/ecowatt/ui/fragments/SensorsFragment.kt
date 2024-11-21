@@ -53,7 +53,6 @@ class SensorsFragment : Fragment(R.layout.fragment_sensors) {
             Toast.makeText(requireContext(), "Erro: usuário não autenticado", Toast.LENGTH_SHORT).show()
         }
 
-        // Ação de adicionar sensor (independente do botão visível)
         val addSensorFragment = AddSensorFragment()
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         btnAdd.setOnClickListener {
@@ -84,13 +83,13 @@ class SensorsFragment : Fragment(R.layout.fragment_sensors) {
                             emptyText.visibility = View.GONE
                             recyclerView.visibility = View.VISIBLE
                             adapter.updateSensors(sensors)
-                            btnAdd.visibility = View.GONE // Esconde o btn_add
-                            btnAddBottom.visibility = View.VISIBLE // Mostra o btn_add_bottom
+                            btnAdd.visibility = View.GONE
+                            btnAddBottom.visibility = View.VISIBLE
                         } else {
                             emptyText.visibility = View.VISIBLE
                             recyclerView.visibility = View.GONE
-                            btnAdd.visibility = View.VISIBLE // Mostra o btn_add
-                            btnAddBottom.visibility = View.GONE // Esconde o btn_add_bottom
+                            btnAdd.visibility = View.VISIBLE
+                            btnAddBottom.visibility = View.GONE
                         }
                     }
                 }

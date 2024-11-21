@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Seção de Configurações -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#000000"
-            android:layout_marginBottom="31dp" />
+            android:layout_marginBottom="21dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,8 +33,9 @@
             android:textSize="12sp"
             android:gravity="center"
             android:textColor="#000000"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="20dp" />
 
+        <!-- Botões de Configuração -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,6 +94,112 @@
                 android:layout_marginTop="5dp"
                 android:backgroundTint="#E35286"
                 android:text="Desligar o sistema"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <!-- Botões de Deslogar e Deletar Conta -->
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FF9800"
+                android:text="Deslogar"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_delete_account"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F44336"
+                android:text="Deletar Conta"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="start"
+                android:text="Atualizar senha"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senha Atual"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/et_current_password"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_input"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senha Nova"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/et_new_password"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_input"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar Senha Nova"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/et_confirm_new_password"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_input"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btn_update_password"
+                android:layout_width="320dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#39A282"
+                android:text="Atualizar Senha"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 

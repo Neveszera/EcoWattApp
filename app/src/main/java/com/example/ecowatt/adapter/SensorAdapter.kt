@@ -147,12 +147,10 @@ class SensorAdapter(
                         }
                     } else {
                         withContext(Dispatchers.Main) {
-                            // Exibe erro se necessário
                         }
                     }
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {
-                        // Exibe erro de exceção se necessário
                     }
                 }
             }
