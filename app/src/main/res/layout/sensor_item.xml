@@ -1,54 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/background_item"
-    android:padding="8dp"
-    android:layout_marginBottom="10dp">
+    android:padding="8dp">
 
-    <!-- Layout Simples -->
-    <LinearLayout
-        android:id="@+id/simple_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/icon_sensor"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_sensor"
-            android:contentDescription="Icone de sensor" />
-
-        <TextView
-            android:id="@+id/sensor_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Nome do sensor"
-            android:textSize="12sp"
-            android:paddingStart="8dp"
-            android:textColor="@android:color/black" />
-
-        <ImageView
-            android:id="@+id/arrow_icon"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:src="@drawable/ic_arrow_down"
-            android:contentDescription="Seta pra expansão" />
-    </LinearLayout>
-
+    <!-- Layout Expandido -->
     <LinearLayout
         android:id="@+id/expanded_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_item"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:padding="15dp"
         android:gravity="start"
+        android:layout_marginTop="15dp"
         android:visibility="gone">
 
         <LinearLayout
@@ -62,6 +28,7 @@
                 android:id="@+id/signal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="Sinal: 100%"
                 android:textSize="12sp"
                 android:textColor="@android:color/black"
@@ -100,24 +67,58 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="end"
-            android:paddingTop="8dp">
+            android:paddingTop="8dp"
+            android:layout_marginTop="35dp">
 
             <ImageView
                 android:id="@+id/edit_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
                 android:src="@drawable/ic_edit"
                 android:contentDescription="Editar"
                 android:layout_marginBottom="30dp" />
 
             <ImageView
                 android:id="@+id/delete_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
                 android:src="@drawable/ic_delete"
                 android:contentDescription="Deletar" />
-
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 
+    <!-- Layout Simples -->
+    <LinearLayout
+        android:id="@+id/simple_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_item"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/icon_sensor"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_energy_generation"
+            android:contentDescription="Icone de sensor" />
+
+        <TextView
+            android:id="@+id/sensor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nome do sensor"
+            android:textSize="12sp"
+            android:paddingStart="8dp"
+            android:textColor="@android:color/black" />
+
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/ic_arrow_down"
+            android:contentDescription="Seta pra expansão" />
+    </LinearLayout>
+</FrameLayout>

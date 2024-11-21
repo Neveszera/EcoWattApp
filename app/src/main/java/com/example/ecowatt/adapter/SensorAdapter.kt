@@ -25,9 +25,17 @@ class SensorAdapter(
 
     private var sensorList: MutableList<SensorResponse> = mutableListOf()
 
+    // Mapa de ícones associados ao tipo de sensor
+    private val sensorIconMap = mapOf(
+        "Geração de energia" to R.drawable.ic_energy_generation,
+        "Fonte de uso" to R.drawable.ic_usage_source,
+        "Comunicação" to R.drawable.ic_communication,
+        "Linha de distribuição" to R.drawable.ic_distribution_line,
+        "Fonte de energia (tomada ou lâmpada)" to R.drawable.ic_power_source
+    )
+
     // Método para atualizar a lista de sensores
     fun updateSensors(sensors: List<SensorResponse>) {
-        // Evita duplicatas verificando os IDs antes de adicionar
         sensors.forEach { newSensor ->
             if (sensorList.none { it.id == newSensor.id }) {
                 sensorList.add(newSensor)
@@ -42,7 +50,6 @@ class SensorAdapter(
             sensorList[index] = updatedSensor
             notifyItemChanged(index)
         } else {
-            // Se o sensor não estiver na lista, adiciona
             sensorList.add(updatedSensor)
             notifyItemInserted(sensorList.size - 1)
         }
@@ -59,6 +66,7 @@ class SensorAdapter(
         val arrowIcon: ImageView = view.findViewById(R.id.arrow_icon)
         val editIcon: ImageView = view.findViewById(R.id.edit_icon)
         val deleteIcon: ImageView = view.findViewById(R.id.delete_icon)
+        val iconSensor: ImageView = view.findViewById(R.id.icon_sensor)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SensorViewHolder {
@@ -80,6 +88,14 @@ class SensorAdapter(
         holder.signal.text = "Sinal: $randomSignal%"
         holder.consumption.text = "Consumo: $randomConsumption Watts / hora"
 
+        // Define o ícone com base no tipo do sensor
+        val iconResId = sensorIconMap[sensor.tipoSensor]
+        if (iconResId != null) {
+            holder.iconSensor.setImageResource(iconResId)
+        } else {
+            holder.iconSensor.setImageResource(R.drawable.ic_energy_generation) // Ícone padrão
+        }
+
         // Alterna entre layouts simples e expandidos
         var isExpanded = false
         holder.simpleLayout.setOnClickListener {
@@ -87,6 +103,12 @@ class SensorAdapter(
             holder.expandedLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
             holder.arrowIcon.setImageResource(
                 if (isExpanded) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down
+            )
+            holder.simpleLayout.setBackgroundResource(
+                if (isExpanded) R.drawable.background_item_green else R.drawable.background_item
+            )
+            holder.sensorName.setTextColor(
+                if (isExpanded) context.getColor(android.R.color.white) else context.getColor(android.R.color.black)
             )
         }
 
