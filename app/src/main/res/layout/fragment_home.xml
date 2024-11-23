@@ -392,7 +392,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:padding="8dp"
+                    android:layout_marginBottom="3dp">
 
                     <!-- Coluna 1: Conectado -->
                     <LinearLayout
@@ -413,16 +414,17 @@
 
                         <!-- Card com 18 / 20 -->
                         <LinearLayout
-                            android:layout_width="73dp"
-                            android:layout_height="70dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:orientation="vertical"
                             android:background="@drawable/rounded_card_green"
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/connectedSensorsText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="18 / 20"
+                                android:text="0 / 0"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#FFFFFF"
@@ -449,16 +451,17 @@
 
                         <!-- Card com 02 / 20 -->
                         <LinearLayout
-                            android:layout_width="73dp"
-                            android:layout_height="70dp"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:orientation="vertical"
                             android:background="@drawable/rounded_card_red"
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/disconnectedSensorsText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="02 / 20"
+                                android:text="0 / 0"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#FF0000"

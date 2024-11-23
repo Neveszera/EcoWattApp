@@ -1,7 +1,7 @@
 <resources>
     <style name="BottomNavTextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:textSize">8sp</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
     </style>
 </resources>

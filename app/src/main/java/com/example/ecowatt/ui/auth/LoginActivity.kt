@@ -2,7 +2,9 @@ package com.example.ecowatt.ui.auth
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -21,6 +23,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        // Altera a cor da barra de status
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window: Window = window
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        }
+
         val loginButton = findViewById<Button>(R.id.login_button)
         val etUser = findViewById<EditText>(R.id.et_user)
         val etPassword = findViewById<EditText>(R.id.et_password)
@@ -37,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    // Ajustado para usar RetrofitInstance sem argumentos
+                    // Faz a requisição de login
                     val response = RetrofitInstance.create().loginUser(LoginRequest(login, senha))
                     runOnUiThread {
                         if (response.isSuccessful) {
@@ -60,8 +68,23 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.makeText(this@LoginActivity, "Token não encontrado.", Toast.LENGTH_SHORT).show()
                             }
                         } else {
-                            val errorMessage = response.errorBody()?.string() ?: "Erro desconhecido"
-                            Toast.makeText(this@LoginActivity, "Erro no login: $errorMessage", Toast.LENGTH_SHORT).show()
+                            // Tratamento de erros com base no código HTTP
+                            when (response.code()) {
+                                400 -> {
+                                    val errorBody = response.errorBody()?.string() ?: ""
+                                    if (errorBody.contains("usuário não encontrado", ignoreCase = true)) {
+                                        Toast.makeText(this@LoginActivity, "Usuário não encontrado.", Toast.LENGTH_SHORT).show()
+                                    } else if (errorBody.contains("senha incorreta", ignoreCase = true)) {
+                                        Toast.makeText(this@LoginActivity, "Senha incorreta.", Toast.LENGTH_SHORT).show()
+                                    } else {
+                                        Toast.makeText(this@LoginActivity, "Erro de validação: $errorBody", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                                else -> {
+                                    val errorMessage = response.errorBody()?.string() ?: "Erro desconhecido"
+                                    Toast.makeText(this@LoginActivity, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                         }
                     }
                 } catch (e: Exception) {
@@ -71,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
 
         createAccountText.setOnClickListener {
             val registerIntent = Intent(this@LoginActivity, RegisterActivity::class.java)

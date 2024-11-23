@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="expanded_background">#39A282</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_on">#39A282</color>
+    <color name="colorPrimary">#39A282</color>
+    <color name="color_off">#E35286</color>
 </resources>

@@ -33,6 +33,9 @@ class AddSensorFragment : Fragment(R.layout.fragment_add_sensors) {
             return
         }
 
+        // Obtem o estado do sistema
+        val isSystemConnected = !sharedPreferences.getBoolean("system_off", false)
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val nextSensorName = getNextSensorName(userId)
@@ -45,6 +48,7 @@ class AddSensorFragment : Fragment(R.layout.fragment_add_sensors) {
             }
         }
 
+        // Configuração do spinner
         val sensorTypes = resources.getStringArray(R.array.sensor_types)
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, sensorTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -63,11 +67,13 @@ class AddSensorFragment : Fragment(R.layout.fragment_add_sensors) {
                 return@setOnClickListener
             }
 
+            // Define o status do sensor
+            val sensorStatus = if (isSystemConnected) "Conectado" else "Desconectado"
             CoroutineScope(Dispatchers.IO).launch {
                 val sensorRequest = SensorRequest(
                     tipoSensor = sensorType,
                     nomeSensor = sensorName,
-                    status = "Conectado",
+                    status = sensorStatus,
                     produtoConectado = sensorProduct,
                     descricao = if (sensorDescription.isBlank()) "-" else sensorDescription,
                     localizacao = if (sensorLocation.isBlank()) "-" else sensorLocation,

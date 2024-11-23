@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.SharedPreferences
+import android.os.Build
+import android.view.Window
 import com.example.ecowatt.ui.auth.LoginActivity
 import com.example.ecowatt.ui.fragments.AnalysesFragment
 import com.example.ecowatt.ui.fragments.EnergyFragment
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Altera a cor da barra de status
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window: Window = window
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        }
 
         val sharedPreferences: SharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val isAuthenticated = sharedPreferences.getBoolean("is_authenticated", false)
@@ -69,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
+            bottomNav.selectedItemId = R.id.nav_middle
         }
     }
 

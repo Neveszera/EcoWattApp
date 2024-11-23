@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_gravity="center"
         android:scaleType="fitCenter"
         android:src="@drawable/header" />
@@ -29,7 +29,7 @@
         android:layout_gravity="bottom"
         android:background="@drawable/bottom_nav_background"
         app:itemBackground="@null"
-        app:itemIconTint="@null"
+        app:itemIconTint="#00432F"
         app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
         app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
         app:itemTextColor="@null"

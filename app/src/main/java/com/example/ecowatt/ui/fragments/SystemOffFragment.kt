@@ -51,7 +51,13 @@ class SystemOffFragment : Fragment(R.layout.fragment_system_off) {
                             apiService.updateSensor(sensor.id, updatedSensor)
                         }
 
+                        // Salvar o estado de que o sistema está desligado
                         withContext(Dispatchers.Main) {
+                            val editor = sharedPreferences.edit()
+                            editor.putBoolean("system_off", true) // Salva o estado do sistema
+                            editor.apply()
+
+                            // Navegar para a tela de sucesso
                             requireActivity().supportFragmentManager.beginTransaction()
                                 .replace(R.id.fragment_container, SystemOffSuccessFragment())
                                 .addToBackStack(null)

@@ -25,13 +25,13 @@ class SensorAdapter(
 
     private var sensorList: MutableList<SensorResponse> = mutableListOf()
 
-    // Mapa de ícones associados ao tipo de sensor
+    // Mapa de ícones associados ao tipo de sensor (ícones padrão e brancos)
     private val sensorIconMap = mapOf(
-        "Geração de energia" to R.drawable.ic_energy_generation,
-        "Fonte de uso" to R.drawable.ic_usage_source,
-        "Comunicação" to R.drawable.ic_communication,
-        "Linha de distribuição" to R.drawable.ic_distribution_line,
-        "Fonte de energia (tomada ou lâmpada)" to R.drawable.ic_power_source
+        "Geração de energia" to Pair(R.drawable.ic_energy_generation, R.drawable.ic_energy_generation_white),
+        "Fonte de uso" to Pair(R.drawable.ic_usage_source, R.drawable.ic_usage_source_white),
+        "Comunicação" to Pair(R.drawable.ic_communication, R.drawable.ic_communication_white),
+        "Linha de distribuição" to Pair(R.drawable.ic_distribution_line, R.drawable.ic_distribution_line_white),
+        "Fonte de energia (tomada ou lâmpada)" to Pair(R.drawable.ic_power_source, R.drawable.ic_power_source_white)
     )
 
     // Método para atualizar a lista de sensores
@@ -89,12 +89,10 @@ class SensorAdapter(
         holder.consumption.text = "Consumo: $randomConsumption Watts / hora"
 
         // Define o ícone com base no tipo do sensor
-        val iconResId = sensorIconMap[sensor.tipoSensor]
-        if (iconResId != null) {
-            holder.iconSensor.setImageResource(iconResId)
-        } else {
-            holder.iconSensor.setImageResource(R.drawable.ic_energy_generation) // Ícone padrão
-        }
+        val (iconResId, iconResIdWhite) = sensorIconMap[sensor.tipoSensor] ?: Pair(R.drawable.ic_energy_generation, R.drawable.ic_energy_generation_white)
+
+        // Ícone inicial
+        holder.iconSensor.setImageResource(iconResId)
 
         // Alterna entre layouts simples e expandidos
         var isExpanded = false
@@ -109,6 +107,11 @@ class SensorAdapter(
             )
             holder.sensorName.setTextColor(
                 if (isExpanded) context.getColor(android.R.color.white) else context.getColor(android.R.color.black)
+            )
+
+            // Muda o ícone para a versão branca quando expandido
+            holder.iconSensor.setImageResource(
+                if (isExpanded) iconResIdWhite else iconResId
             )
         }
 
